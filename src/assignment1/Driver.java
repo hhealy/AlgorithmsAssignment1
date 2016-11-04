@@ -19,7 +19,7 @@ public class Driver
 		driver.runMainMenu();
 	}
 
-	private int mainMenu()
+	private int mainMenu()//This creates the menu for the program.
 	{
 		System.out.println("Please choose a program: ");
 		System.out.println("--------");
@@ -31,7 +31,7 @@ public class Driver
 		return option;
 	}
 
-	private void runMainMenu() throws IOException
+	private void runMainMenu() throws IOException //This runs the program.
 	{
 		int option = mainMenu();
 		switch (option)
@@ -48,7 +48,7 @@ public class Driver
 		}
 	}
 
-	private void bruteAutoCompleteSearch() throws IOException
+	private void bruteAutoCompleteSearch() throws IOException //This method gets the user to enter a chosen string, a chosen number of matches and outputs the top amount of matches for the entered string.
 	{
 		bruteAuto = new BruteAutoComplete();
 		
