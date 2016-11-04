@@ -1,3 +1,11 @@
+/*
+ * Henry Healy
+ * 20072447
+ * Applied Computing
+ * 2nd Year
+ * Frank Walsh
+*/
+
 package assignment1;
 
 import java.util.ArrayList;
