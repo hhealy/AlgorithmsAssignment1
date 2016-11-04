@@ -29,12 +29,12 @@ public class BruteAutoCompleteTest
 		term156 = new Term(56467400, "get");
 		term7700 = new Term(681404, "particles");
 		
-		results1 = new ArrayList<String>();
+		results1 = new ArrayList<String>();//This creates an arraylist that contains the first three terms for 'in'
 		results1.add(terms.terms.get(4).getTerm()); //adds the word "in"
 		results1.add(terms.terms.get(55).getTerm()); //adds the word "into"
 		results1.add(terms.terms.get(329).getTerm()); //add the word "indeed"
 		
-		results2 = new ArrayList<String>();
+		results2 = new ArrayList<String>();//This creates an arraylist that contains the first six terms for 
 		results2.add(terms.terms.get(2).getTerm()); //adds the word "and"
 		results2.add(terms.terms.get(40).getTerm()); //adds the word "an"
 		results2.add(terms.terms.get(57).getTerm()); //adds the word "any"
@@ -44,7 +44,7 @@ public class BruteAutoCompleteTest
 	}
 	
 	@Test
-	public void testWeightOf() 
+	public void testWeightOf() //This tests the weightOf method by using the array of words and it gets the weight of each one.
 	{
 		assertEquals(1742063600, bruteAuto.weightOf("in"), 0.01);
 		assertEquals(327769900, bruteAuto.weightOf("my"), 0.01);
@@ -61,7 +61,7 @@ public class BruteAutoCompleteTest
 	}
 	
 	@Test
-	public void testBestMatch()
+	public void testBestMatch() //This tests the bestMatch method by using an array of of prefixes.
 	{
 		assertEquals(term5.getTerm(), bruteAuto.bestMatch("in"));
 		assertEquals(term35.getTerm(), bruteAuto.bestMatch("my"));
@@ -78,7 +78,7 @@ public class BruteAutoCompleteTest
 	}
 	
 	@Test
-	public void testMatches()
+	public void testMatches() //This tests the matches method by getting the list of matches from the array.
 	{
 		assertEquals(results1, bruteAuto.matches("in", 3));
 		assertEquals(results2, bruteAuto.matches("an", 6));
@@ -87,9 +87,9 @@ public class BruteAutoCompleteTest
 	@Test
 	public void testFailedMatches()
 	{
-		assertEquals(null, bruteAuto.matches(null, 5));
-		assertEquals(null, bruteAuto.matches("FailureTest", 20000));
-		assertEquals(null, bruteAuto.matches(null, 30000));
-		assertEquals(null, bruteAuto.matches("in", -4));
+		assertEquals(null, bruteAuto.matches(null, 1));
+		assertEquals(null, bruteAuto.matches("FailureTest", 10000));
+		assertEquals(null, bruteAuto.matches(null, 10000));
+		assertEquals(null, bruteAuto.matches("in", -1));
 	}
 }
