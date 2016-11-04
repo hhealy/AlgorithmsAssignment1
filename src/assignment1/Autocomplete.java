@@ -1,7 +1,5 @@
 package assignment1;
 
-import java.util.List;
-
 public interface Autocomplete 
 {
 	//Returns the weight of the term, or 0.0 if no such term.
